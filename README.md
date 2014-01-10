@@ -12,7 +12,7 @@ your project without having to navigate directories.
 **the local-lib way**
 
 ```javascript
-	var db = require('local-lib/db');
+	var db = require('local-lib').db;
 ```
 
 
@@ -43,6 +43,7 @@ or a `package.json` file with a `main` directive to point to your main file.
 	└── app.js
 
 
+**app.js**
 
 ```javascript
 	var lib = require('local-lib');
@@ -50,10 +51,8 @@ or a `package.json` file with a `main` directive to point to your main file.
 	var utils = lib.utils;
 ```
 
-```javascript
-	var db = require('local-lib').db;
-```
+or
 
 ```javascript
-	var utils = require('local-lib/utils');
+	var db = require('local-lib').db;
 ```
