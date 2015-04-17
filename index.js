@@ -1,4 +1,5 @@
 var fs = require('fs');
+var debug = require('debug')('local-lib');
 
 ['lib', 'library'].forEach(function(path) {
 	var libs = [];
@@ -10,7 +11,7 @@ var fs = require('fs');
 
 	libs.forEach(function(lib) {
 		if (/^\./.test(lib)) return; // ignore dotfiles
-		console.log('local-lib: loading library "%s"', lib);
+		debug('loading library "%s"', lib);
 		exports[lib.split('.')[0]] = require('../../' + path + '/' + lib);
 	});
 });
