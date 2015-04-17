@@ -1,6 +1,6 @@
 {
   "name": "local-lib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Load a local library as a global module.",
   "main": "index.js",
   "scripts": {
@@ -16,10 +16,37 @@
     "library",
     "screenrev"
   ],
-  "author": "glen@screenrev.com",
+  "dependencies": {
+    "debug": "^2.1.3"
+  },
+  "author": {
+    "name": "glen@screenrev.com"
+  },
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/screenrev/node-local-lib/issues"
   },
-  "homepage": "https://github.com/screenrev/node-local-lib"
+  "homepage": "https://github.com/screenrev/node-local-lib",
+  "readme": "# local-lib\n\nNode.js `require` your local library files/modules easily from anywhere in\nyour project without having to navigate directories.\n\n**painful**\n\n```javascript\n\tvar db = require('../../../../lib/db');\n```\n\n**the local-lib way**\n\n```javascript\n\tvar db = require('local-lib').db;\n```\n\n\n## Installation\n\n\tnpm install local-lib\n\n\n## Usage\n\n1. add a `lib` or `library` folder in your project root.\n2. add `.js` files, `.json` files, or module folders to your library\n3. access your library easily using global require\n\nLibrary folders should contain an `index.js` to export your library,\nor a `package.json` file with a `main` directive to point to your main file.\n\n\n## Example\n\n**project structure**\n\n\tproject root\n\t├── lib\n\t│   ├── utils\n\t│   │   └── index.js\n\t│   └── db.js\n\t└── app.js\n\n\n**app.js**\n\n```javascript\n\tvar lib = require('local-lib');\n\tvar db = lib.db;\n\tvar utils = lib.utils;\n```\n\nor\n\n```javascript\n\tvar db = require('local-lib').db;\n```\n",
+  "readmeFilename": "README.md",
+  "_id": "local-lib@0.1.0",
+  "dist": {
+    "shasum": "934421cf076c3d5f131b727bafb8ac5649a06045",
+    "tarball": "http://registry.npmjs.org/local-lib/-/local-lib-0.1.0.tgz"
+  },
+  "_from": "local-lib@>=0.1.0 <0.2.0",
+  "_npmVersion": "1.3.15",
+  "_npmUser": {
+    "name": "glenashley",
+    "email": "glen@screenrev.com"
+  },
+  "maintainers": [
+    {
+      "name": "glenashley",
+      "email": "glen@screenrev.com"
+    }
+  ],
+  "directories": {},
+  "_shasum": "934421cf076c3d5f131b727bafb8ac5649a06045",
+  "_resolved": "https://registry.npmjs.org/local-lib/-/local-lib-0.1.0.tgz"
 }
